@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:workout_app/constants.dart';
 import 'package:workout_app/widgets/custom_widget.dart';
@@ -15,6 +16,7 @@ class DetailsTrain extends StatelessWidget {
           children: [
             SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Stack(
                     children: [
@@ -170,72 +172,132 @@ class DetailsTrain extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 10,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Advance Workout",
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Text(
-                            "Advance Workout",
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                        ),
+                        SizedBox(height: 5),
+                        RatingBar.builder(
+                          initialRating: 3,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          itemSize: 15,
+                          itemCount: 5,
+                          unratedColor: Color(0xFF707070),
+                          itemPadding: EdgeInsets.symmetric(horizontal: 5.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                        ),
+                        SizedBox(height: 25),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "Description",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
                             ),
+                            Text(
+                              "Feedback",
+                              style: TextStyle(
+                                  color: Color(0xFF707070),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "related",
+                              style: TextStyle(
+                                  color: Color(0xFF707070),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "You should always try to work out at least three times, spaced out across the week,"
+                          " so you can get the maximum benefits. Therefore, anywhere from three to six workouts is ideal."
+                          " I like to do six workouts a week on Monday through Saturday,"
+                          " with a rest day on Sunday. REST: Second of all, don't forget the rest day.",
+                          style: TextStyle(color: Colors.white, fontSize: 12),
+                        ),
+                        Center(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 20),
+                              FlatButton(
+                                onPressed: () {},
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: kFirstColor,
+                                  ),
+                                  height: 50,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: Center(
+                                    child: Text(
+                                      "Begin Train for \$5.00",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              FlatButton(
+                                onPressed: () {},
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: kThirdColor,
+                                    border: Border.all(
+                                        width: 1, color: kFirstColor),
+                                  ),
+                                  height: 50,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: Center(
+                                    child: Text(
+                                      "Begin Train Demo",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-            Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 75,
-                  width: MediaQuery.of(context).size.width,
-                  color: Color(0xFF242538),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 25, horizontal: 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomIcon(),
-                        Text(
-                          "Workout",
-                          style: TextStyle(
-                            color: Color(0xFF707070),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          "Level",
-                          style: TextStyle(
-                            color: Color(0xFF707070),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          "Profile",
-                          style: TextStyle(
-                            color: Color(0xFF707070),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )),
           ],
         ),
       ),
