@@ -41,8 +41,8 @@ class WorkoutScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 20),
                     child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SizedBox(height: 30),
                         RichText(
                           text: TextSpan(
                             text: 'HARD\t',
@@ -99,6 +99,12 @@ class WorkoutScreen extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                       hintText: "fahdmekky@gmail.com",
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF707070)),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF707070)),
+                      ),
                       hintStyle: TextStyle(
                         color: Colors.white,
                       ),
@@ -113,6 +119,12 @@ class WorkoutScreen extends StatelessWidget {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: "********",
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF707070)),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF707070)),
+                      ),
                       hintStyle: TextStyle(
                         color: Colors.white,
                       ),

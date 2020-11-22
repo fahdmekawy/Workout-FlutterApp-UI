@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:workout_app/constants.dart';
@@ -19,16 +18,11 @@ class TrainScreen extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height / 2,
+                        height: MediaQuery.of(context).size.height * 0.55,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/images/3.png"),
-                            fit: BoxFit.fill,
-                          ),
-                          gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            colors: [kThirdColor, Colors.transparent],
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -44,6 +38,7 @@ class TrainScreen extends StatelessWidget {
                           ),
                         ),
                         height: MediaQuery.of(context).size.height * 0.55,
+                        width: MediaQuery.of(context).size.width,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 20),

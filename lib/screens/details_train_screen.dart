@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:workout_app/constants.dart';
+import 'package:workout_app/screens/login_screen.dart';
 import 'package:workout_app/widgets/custom_widget.dart';
 import 'package:workout_app/widgets/exmaple_card.dart';
 
@@ -264,7 +265,10 @@ class DetailsTrain extends StatelessWidget {
                               ),
                               SizedBox(height: 20),
                               FlatButton(
-                                onPressed: () {},
+                                onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => WorkoutScreen())),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(5),

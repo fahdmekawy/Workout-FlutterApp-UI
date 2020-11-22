@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:workout_app/constants.dart';
 import 'package:workout_app/screens/about.dart';
 
+import 'details_train_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 80),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsTrain(),
+                      ),
+                    ),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),

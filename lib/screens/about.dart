@@ -69,7 +69,7 @@ class AboutScreen extends StatelessWidget {
                     children: [
                       StateWidget(
                         state: "I am \ninactive",
-                        detail: "I have never trained",
+                        detail: "I am \ninactive",
                         enable: true,
                       ),
                       SizedBox(width: 20),
